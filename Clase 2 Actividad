@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Inscripcion en Programacion</title>
+  </head>
+  <body>
+    <h1>Inscripcion en Programacion</h1>
+    <p>Porfavor llenar con la informacion que corresponda</p>
+    <form method="post">
+      <fieldset>
+        <label >Ingrese su Nombre: <input id="first-name" name="first-name" type="text" required /></label>
+        <label for="last-name">Ingrese su Apellido: <input id="last-name" name="last-name" type="text" required /></label>
+        <label for="email">Ingrese su e-mail: <input id="email" name="email" type="email" required /></label>
+        <label for="new-password">Ingrese su contraseña: <input id="new-password" name="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
+        <label for="new-password">Ingrese su pais<input id="country" name="country" type="country"  required /></label>
+      </fieldset>
+      <fieldset>
+        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" class="inline" /> Trabajo</label>
+        <label for="business-account"><input id="business-account" type="radio" name="account-type" class="inline" /> No Trabajo</label>
+        
+      </fieldset>
+      <fieldset>
+        <label for="profile-picture">Suba una Imagen de Perfil <input id="profile-picture" type="file" name="file" /></label>
+        <label for="age">Edad (años): <input id="age" type="number" name="age" min="13" max="120" /></label>
+        <label for="referrer">Por donde esuchaste sobre la carrera
+          <select id="referrer" name="referrer">
+            <option value="">(seleccione una)</option>
+            <option value="1">Diario</option>
+            <option value="2">Redes Sociales</option>
+            <option value="3">Amigos/conocidos</option>
+            <option value="4">Otro</option>
+          </select>
+        </label>
+        
+      </fieldset>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
