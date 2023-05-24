@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primer Sitio Web</title>
+</head>
+<body>
+    <main>
+      <h1>Mi Primera paguina web con HTML</h1>
+      <section>
+        <h2>HTML5</h2>
+      </section>
+      <section>
+        
+        <h3>Ventajas de HTML</h3>
+        <ul>
+          <li>describir hipertexto</li>
+          <li>admite cualquier tipo de explorador y permite archivos pequeños</li>
+          <li>despliegue rápido</li>
+        </ul>
+        <figure>
+          <img src="C:\Users\tiago\OneDrive\Desktop\imagen programa.jpg" alt="Imagen Programa">  
+        </figure>
+        <h3>3 cosas necesarias para programar</h3>
+        <ol>
+          <li>Una Computadora</li>
+          <li>Muchas Ganas</li>
+          <li>Litros de Cafe</li>
+        </ol>
+        <figure>
+          <img src="C:\Users\tiago\OneDrive\Desktop\imagegen programa.jpg" alt="Imagen Programacion.">  
+        </figure>
+      </section>
+      
+    </main>
+    
+  </body>
+</html>
