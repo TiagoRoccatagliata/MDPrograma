@@ -1,0 +1,25 @@
+#cuadrado1 {
+    background-color: lightslategrey;
+}
+
+#cuadrado2 {
+    background-color: lightslategrey;
+}
+
+#cuadrado3 {
+    background-color: lightslategrey;
+}
+
+html {
+    background-color: grey;
+}
+
+#lista1, #lista2 {
+    text-align: center;
+    
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
