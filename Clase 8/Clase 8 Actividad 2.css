@@ -1,0 +1,38 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    grid-auto-rows: minmax(100px, auto);
+    align-items: stretch;
+}
+
+.grid > div  {
+    background: #d99c63;
+    padding: 1em;
+    border: 1px solid rgb(222, 109, 11);
+}
+
+.item1 {
+    grid-column: 1 / 4;
+}
+
+.item2 {
+    grid-row: 2 / 4;
+}
+
+.item6 {
+    background: #ecc6a3;
+
+}
+
+
+.a, .b, .c  {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(10px, auto);
+    align-items: stretch;
+    background: #ecc6a3;
+    padding: 1em;
+    border: 1px solid rgb(222, 109, 11);
+    
+}
