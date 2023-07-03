@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+
+
+
+.box-1 {
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+    position: relative;
+    left: 100px;  
+    z-index: 3;
+    
+}
+
+.box-2 {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    position: relative;
+    top: -100px;
+    left: 120px;
+    z-index: 2;
+    
+
+}
+
+.box-3 {
+    width: 100px;
+    height: 100px;
+    background-color: lightgreen;
+    position: relative;
+    top: -200px;
+    left: 140px;
+    z-index: 1;
+   
+}
