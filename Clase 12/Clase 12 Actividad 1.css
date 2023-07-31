@@ -1,0 +1,25 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .header {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .card {
+    border: 1px solid #ccc;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
