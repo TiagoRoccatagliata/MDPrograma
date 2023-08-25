@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tienda en Línea</title>
+</head>
+<body>
+    <h1>Tienda en Línea</h1>
+    <div id="productosDisponibles"></div>
+
+    <h2>Carrito de Compra</h2>
+    <ul id="carrito"></ul>
+    <p id="total">TOTAL: $0</p>
+
+    <script>
+        class TiendaOnline {
+            constructor() {
+                this.productosDisponibles = [
+                    { id: 1, nombre: "Producto 1", precio: 10 },
+                    { id: 2, nombre: "Producto 2", precio: 20 },
+                    { id: 3, nombre: "Producto 3", precio: 15 },
+                    { id: 4, nombre: "Producto 4", precio: 25 }
+                ];
+                this.carrito = [];
+            }
+
+            mostrarProductos() {
+                const productosDisponiblesDiv = document.getElementById("productosDisponibles");
+
+                this.productosDisponibles.forEach(producto => {
+                    const productoDiv = document.createElement("div");
+                    productoDiv.innerHTML = `
+                        <p>${producto.nombre} $${producto.precio}</p>
+                        <img src="imagen_${producto.id}.jpg" alt="${producto.nombre}">
+                        <button onclick="tienda.agregarAlCarrito(${producto.id})">Agregar al carrito</button>
+                    `;
+                    productosDisponiblesDiv.appendChild(productoDiv);
+                });
+            }
+
+            agregarAlCarrito(idProducto) {
+                const productoEncontrado = this.productosDisponibles.find(producto => producto.id === idProducto);
+                if (productoEncontrado) {
+                    this.carrito.push(productoEncontrado);
+                    this.actualizarCarrito();
+                }
+            }
+
+            quitarDelCarrito(idProducto) {
+                this.carrito = this.carrito.filter(producto => producto.id !== idProducto);
+                this.actualizarCarrito();
+            }
+
+            actualizarCarrito() {
+                const carritoList = document.getElementById("carrito");
+                const totalElement = document.getElementById("total");
+                carritoList.innerHTML = "";
+                let total = 0;
+
+                this.carrito.forEach(producto => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `
+                        ${producto.nombre} $${producto.precio}
+                        <button onclick="tienda.quitarDelCarrito(${producto.id})">Quitar</button>
+                    `;
+                    carritoList.appendChild(li);
+                    total += producto.precio;
+                });
+
+                totalElement.textContent = `TOTAL: $${total}`;
+            }
+        }
+
+        const tienda = new TiendaOnline();
+        tienda.mostrarProductos();
+    </script>
+</body>
+</html>
