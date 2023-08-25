@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Programa de Imágenes</title>
+</head>
+<body>
+    <button id="agregarImagen">Agregar Imagen</button>
+
+    <script>
+        document.getElementById("agregarImagen").addEventListener("click", function() {
+            const imagen = document.createElement("img");
+            imagen.src = "saludo.gif";
+            imagen.className = "imagenAgregada";
+            
+            imagen.addEventListener("dblclick", function() {
+                if (confirm("¿Deseas eliminar esta imagen?")) {
+                    document.body.removeChild(imagen);
+                }
+            });
+            
+            document.body.appendChild(imagen);
+        });
+    </script>
+</body>
+</html>
