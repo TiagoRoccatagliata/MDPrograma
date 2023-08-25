@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guardar Datos Personales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #mensaje {
+            margin-top: 10px;
+            color: green;
+        }
+        #formularioDatos {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido</h1>
+    <p id="mensaje"></p>
+    <button id="cerrarSesion" style="display: none;">Cerrar Sesión</button>
+
+    <div id="formularioDatos">
+        <h2>Guardar Datos Personales</h2>
+        <form id="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <br>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" required>
+            <br>
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" required>
+            <br>
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" required>
+            <br>
+            <label for="hobbies">Hobbies Favoritos:</label>
+            <textarea id="hobbies" rows="3"></textarea>
+            <br>
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <script>
+        const mensaje = document.getElementById("mensaje");
+        const cerrarSesionBtn = document.getElementById("cerrarSesion");
+        const formularioDatosDiv = document.getElementById("formularioDatos");
+        const formulario = document.getElementById("formulario");
+
+        // Verificar la sesión al cargar la página
+        window.addEventListener("load", function() {
+            const sesionIniciada = localStorage.getItem("sesionIniciada");
+            if (sesionIniciada === "true") {
+                const usuarioRecordado = localStorage.getItem("usuarioRecordado");
+                mensaje.textContent = `Bienvenido, ${usuarioRecordado}!`;
+                mensaje.style.color = "green";
+                cerrarSesionBtn.style.display = "block";
+                formularioDatosDiv.style.display = "block";
+            } else {
+                actualizarInterfazSesionCerrada();
+            }
+        });
+
+        cerrarSesionBtn.addEventListener("click", function() {
+            localStorage.removeItem("sesionIniciada");
+            localStorage.removeItem("usuarioRecordado");
+            mensaje.textContent = "Sesión cerrada.";
+            mensaje.style.color = "red";
+            actualizarInterfazSesionCerrada();
+        });
+
+        formulario.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const datosPersonales = {
+                nombre: document.getElementById("nombre").value,
+                apellido: document.getElementById("apellido").value,
+                dni: document.getElementById("dni").value,
+                fechaNacimiento: document.getElementById("fechaNacimiento").value,
+                hobbies: document.getElementById("hobbies").value
+            };
+
+            localStorage.setItem("datosPersonales", JSON.stringify(datosPersonales));
+            mensaje.textContent = "Datos personales guardados.";
+            mensaje.style.color = "green";
+        });
+
+        function actualizarInterfazSesionCerrada() {
+            cerrarSesionBtn.style.display = "none";
+            formularioDatosDiv.style.display = "none";
+        }
+    </script>
+</body>
+</html>
+
+

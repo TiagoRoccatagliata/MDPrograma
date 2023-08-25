@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cuadrado Personalizado</title>
+</head>
+<body>
+    <h1>Personaliza tu Cuadrado</h1>
+    <label for="nombre">Nombre y Apellido:</label>
+    <input type="text" id="nombre">
+    <br>
+    <label for="backgroundColor">Color de Fondo:</label>
+    <input type="color" id="backgroundColor">
+    <br>
+    <label for="fontColor">Color de Fuente:</label>
+    <input type="color" id="fontColor">
+    <br>
+    <label for="fontSize">Tamaño de Fuente:</label>
+    <input type="number" id="fontSize" min="10" max="100">
+    <br>
+    <button id="crearCuadrado">Crear Cuadrado</button>
+    <br>
+    <div id="cuadrado"></div>
+
+    <script>
+        const nombreInput = document.getElementById("nombre");
+        const backgroundColorInput = document.getElementById("backgroundColor");
+        const fontColorInput = document.getElementById("fontColor");
+        const fontSizeInput = document.getElementById("fontSize");
+        const crearCuadradoBtn = document.getElementById("crearCuadrado");
+        const cuadradoDiv = document.getElementById("cuadrado");
+
+        crearCuadradoBtn.addEventListener("click", function() {
+            const nombreCompleto = nombreInput.value;
+            const backgroundColor = backgroundColorInput.value;
+            const fontColor = fontColorInput.value;
+            const fontSize = fontSizeInput.value + "px";
+
+            cuadradoDiv.innerHTML = nombreCompleto;
+            cuadradoDiv.style.backgroundColor = backgroundColor;
+            cuadradoDiv.style.color = fontColor;
+            cuadradoDiv.style.fontSize = fontSize;
+            cuadradoDiv.style.width = "200px";
+            cuadradoDiv.style.height = "200px";
+            cuadradoDiv.style.textAlign = "center";
+            cuadradoDiv.style.lineHeight = "200px";
+            cuadradoDiv.style.margin = "20px auto";
+            cuadradoDiv.style.border = "1px solid black";
+        });
+    </script>
+</body>
+</html>
